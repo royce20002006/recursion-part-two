@@ -30,7 +30,8 @@ function reverse(str, i = str.length - 1, res = '') {
     return res
   }
   res += str.slice(i,i + 1)
- return reverse(str, i - 1, res)
+
+  return reverse(str, i - 1, res)
 
 }
 
