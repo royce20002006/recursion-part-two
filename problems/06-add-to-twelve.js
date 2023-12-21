@@ -13,7 +13,13 @@ addToTwelve([1]); // false
 ***********************************************************************/
 
 
-function addToTwelve(arr) {
+function addToTwelve(arr, i = 0) {
+  let res = false;
+  if (i === arr.length - 1) return res;
+
+  if (arr[i] + arr[i + 1] === 12) res = true;
+
+  return res || addToTwelve(arr, i + 1);
   
 }
 
