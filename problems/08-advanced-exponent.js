@@ -6,8 +6,8 @@ number raised to the power of half of n power.
 
 The following is math, not JavaScript:
 
-exponent(b, 0) // 1
-exponent(b, 1) // b
+exponent(b, 0) // 1   // base
+exponent(b, 1) // b //base case 2
 exponent(b, n) // exponent(b, n / 2) ** 2             [for even n]
 exponent(b, n) // b * (exponent(b, (n - 1) / 2) ** 2) [for odd n]
 
@@ -42,6 +42,16 @@ times `advancedExponent` is being recursively called.
 
 function advancedExponent(b, n) {
   // Your code here 
+ 
+  if (n === 0) return 1;
+  if (n === 1) return b;
+  if (n % 2 === 0) {
+    return advancedExponent(b, n/2) ** 2;
+  }
+  if (n % 2 !== 0) {
+    
+    return b * (advancedExponent(b, (n - 1) / 2) ** 2)
+  }
 }
 
 
